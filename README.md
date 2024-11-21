@@ -24,6 +24,6 @@ play_game_of_life
 this will run with some default options.
 To see a list of all the possible options type
 
-``
+```
 play_game_of_life -h
 ```
