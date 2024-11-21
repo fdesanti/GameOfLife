@@ -1,0 +1,15 @@
+# File extensions
+*.pdf
+*.png
+
+# Compiled files
+*.pyc
+*.DS_Store
+
+# Cached directories
+__pycache__/
+*.egg-info/
+build/
+
+# Jupyter Notebook
+.ipynb_checkpoints
