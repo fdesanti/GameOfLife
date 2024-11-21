@@ -178,7 +178,7 @@ class GameofLife:
 if __name__=='__main__':
 
     pars = argparse.ArgumentParser()
-    pars.add_argument("--N", type=int, default=10, help="Size of the grid NxM. (Default: 10)")
+    pars.add_argument("--N", type=int, default=100, help="Size of the grid NxM. (Default: 10)")
     pars.add_argument("--M", default=None, help="Size of the grid NxM. If None then M=N. (Default: None)")
     pars.add_argument("--boundary", type=str, default="wall", help="Boundary condition. (Default: wall)")
     pars.add_argument("--seed", default=None, help="Random seed for reproducibility. (Default: None)")
