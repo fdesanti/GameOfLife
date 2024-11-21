@@ -17,7 +17,6 @@ setup(
     license                       = "GNU General Public License v3.0",
     packages                      = find_packages(),
     install_requires              = ["numpy"],  
-    #scripts                       = ['bin/play_game_of_life.py'],
     entry_points={
         "console_scripts": [
             "play_game_of_life=game_of_life.main:main",
