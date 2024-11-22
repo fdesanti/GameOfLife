@@ -49,19 +49,15 @@ class GameofLife:
         #create an initial grid with all dead cells
         self.grid  = np.zeros((self.N, self.M))
 
-        #these are just dummy ij indexes of the grid
-        i = np.arange(self.N)
-        j = np.arange(self.M)
-
-        #Randomly choose the number of alive cells
+        #Randomly choose the number of alive cells (from 1 to NxM)
         Nalive = np.random.randint(1, self.N*self.M + 1)
         
         #Randomly pick coordinates for those cells
-        ixs = np.random.choice(i, Nalive, replace=True)
-        jxs = np.random.choice(j, Nalive, replace=True)
+        indices = np.random.choice(self.N * self.M, Nalive, replace=False)
+        i, j    = np.unravel_index(indices, (self.N, self.M))
         
         #change the grid in those position 
-        self.grid[ixs, jxs] = 1.0
+        self.grid[i, j] = 1.0
         return self.grid
 
     @staticmethod
@@ -153,8 +149,8 @@ class GameofLife:
         fig, ax = plt.subplots()
         plt.title("Welcome to the Conway's Game of Life!")
         im = ax.imshow(self.grid, cmap="binary_r")
-        plt.gca().set_xticklabels([])
-        plt.gca().set_yticklabels([])
+        plt.gca().set_xticks([])
+        plt.gca().set_yticks([])
         
         #evolution loop
         while True:
@@ -167,7 +163,8 @@ class GameofLife:
             plt.pause(0.1)
 
             #check wether we reached a stationary state
-            if prev_grid is new_grid:
+            if np.array_equal(prev_grid, new_grid):
+                print("\nStationary state reached. Game Over!")
                 break
             else:
                 prev_grid = new_grid
