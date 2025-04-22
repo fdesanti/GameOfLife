@@ -13,7 +13,7 @@ cd GameOfLife
 python setup.py install
 ```
 
-## Basic usage
+## Usage
 
 To have fun with it, simply run in your terminal the command
 
