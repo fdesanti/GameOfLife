@@ -10,7 +10,7 @@ To install GameOfLife you can clone this repository then install it with pip
 ```
 git clone https://github.com/fdesanti/GameOfLife.git
 cd GameOfLife
-pip install -e .
+python setup.py install
 ```
 
 ## Basic usage
